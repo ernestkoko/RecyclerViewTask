@@ -3,6 +3,7 @@ package com.example.recyclerviewtask
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -24,13 +25,15 @@ public class RecyclerViewAdapter(val userList: ArrayList<User>): RecyclerView.Ad
         val user: User = userList[position]
         holder.name.text = user.name
         holder.address.text = user.address
+        holder.image.setImageResource(user.image)
 
       //  return holder.itemView;
     }
-
+     //The viewHolder class
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val name = itemView.findViewById(R.id.text_name) as TextView
         val address = itemView.findViewById(R.id.address) as TextView
+         val image = itemView.findViewById(R.id.item_image) as ImageView
 
     }
 
